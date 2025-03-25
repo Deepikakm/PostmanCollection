@@ -28,7 +28,7 @@ pipeline {
 
         stage('Run API Test Cases') {
             steps {
-                bat 'docker run -v $(pwd)/newman:/app/ deepa908/gorestapi:2.0'
+                bat docker run -v %cd%/newman:/app/newman deepa908/gorestapi:2.0'
             }
         }
 
