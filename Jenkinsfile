@@ -16,19 +16,19 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/naveenanimation20/July2024PostmanCollections'
+                git url: 'https://github.com/Deepikakm/PostmanCollection'
             }
         }
 
         stage('Pull Docker Image') {
             steps {
-                sh 'docker pull naveenkhunteta/gorestddtest:1.0'
+                sh 'docker pull deepa908/gorestapi:2.0'
             }
         }
 
         stage('Run API Test Cases') {
             steps {
-                sh 'docker run -v $(pwd)/newman:/app/results naveenkhunteta/gorestddtest:1.0'
+                sh 'docker run -v $(pwd)/newman:/app/ deepa908/gorestapi:2.0'
             }
         }
 
