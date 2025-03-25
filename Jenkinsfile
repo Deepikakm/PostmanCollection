@@ -22,13 +22,13 @@ pipeline {
 
         stage('Pull Docker Image') {
             steps {
-                sh 'docker pull deepa908/gorestapi:2.0'
+                bat 'docker pull deepa908/gorestapi:2.0'
             }
         }
 
         stage('Run API Test Cases') {
             steps {
-                sh 'docker run -v $(pwd)/newman:/app/ deepa908/gorestapi:2.0'
+                bat 'docker run -v $(pwd)/newman:/app/ deepa908/gorestapi:2.0'
             }
         }
 
